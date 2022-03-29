@@ -1,0 +1,14 @@
+﻿@{
+    ViewData["Title"] = "Bowlers";
+}
+
+@model List<Bowler>
+
+<h1>Bowlers</h1>
+
+<ul>
+    @foreach (Bowler b in Model)
+    {
+        <li>@b.BowlerFirstName</li>
+    }
+</ul>

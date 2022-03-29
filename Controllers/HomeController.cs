@@ -20,9 +20,12 @@ namespace Bowlers.Controllers
             _repo = temp;
         }
 
-
-
         public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult BowlerHome()
         {
             var bowlers = _repo.Bowlers
                 .ToList();
