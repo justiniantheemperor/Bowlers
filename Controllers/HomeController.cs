@@ -11,16 +11,23 @@ namespace Bowlers.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private BowlingDbContext _context { get; set; }
+
+        //constructor
+        public HomeController(BowlingDbContext temp)
         {
-            _logger = logger;
+            _context = temp;
         }
+
+
 
         public IActionResult Index()
         {
-            return View();
+            var bowlers = _context.Bowlers
+                .ToList();
+
+            return View(bowlers);
         }
 
         public IActionResult Privacy()
