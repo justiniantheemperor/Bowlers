@@ -12,19 +12,19 @@ namespace Bowlers.Controllers
     public class HomeController : Controller
     {
 
-        private BowlingDbContext _context { get; set; }
+        private IBowlersRepository _repo { get; set; }
 
         //constructor
-        public HomeController(BowlingDbContext temp)
+        public HomeController(IBowlersRepository temp)
         {
-            _context = temp;
+            _repo = temp;
         }
 
 
 
         public IActionResult Index()
         {
-            var bowlers = _context.Bowlers
+            var bowlers = _repo.Bowlers
                 .ToList();
 
             return View(bowlers);
