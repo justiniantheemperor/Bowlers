@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -19,5 +20,9 @@ namespace Bowlers.Models
         public string BowlerState { get; set; }
         public string BowlerZip { get; set; }
         public string BowlerPhoneNumber { get; set; }
+
+        //Foreign Key
+        public int TeamID { get; set; }
+        public Team Team { get; set; }
     }
 }

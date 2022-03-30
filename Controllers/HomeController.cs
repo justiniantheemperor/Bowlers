@@ -1,5 +1,6 @@
 ﻿using Bowlers.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
@@ -28,11 +29,13 @@ namespace Bowlers.Controllers
         public IActionResult BowlerHome()
         {
             var bowlers = _repo.Bowlers
+                .Include(x => x.Team)
                 .ToList();
 
             return View(bowlers);
         }
 
+        // View Teams page
         public IActionResult Teams()
         {
             var teams = _repo.Teams
@@ -41,7 +44,7 @@ namespace Bowlers.Controllers
             return View(teams);
         }
 
-
+        
 
 
 

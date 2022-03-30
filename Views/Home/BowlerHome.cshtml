@@ -14,6 +14,7 @@
     <table class="table table-bordered table-striped table-dark">
         <thead>
             <tr>
+                <th>Team Name</th>
                 <th>First Name</th>
                 <th>MI</th>
                 <th>Last Name</th>
@@ -28,6 +29,7 @@
             @foreach (Bowler b in Model)
             {
             <tr>
+                <td>@b.Team.TeamName</td>
                 <td>@b.BowlerFirstName</td>
                 <td>@b.BowlerMiddleInit</td>
                 <td>@b.BowlerLastName</td>
