@@ -12,10 +12,10 @@ namespace Bowlers.Controllers
     public class HomeController : Controller
     {
 
-        private IBowlersRepository _repo { get; set; }
+        private IBowlingRepository _repo { get; set; }
 
         //constructor
-        public HomeController(IBowlersRepository temp)
+        public HomeController(IBowlingRepository temp)
         {
             _repo = temp;
         }
@@ -32,6 +32,21 @@ namespace Bowlers.Controllers
 
             return View(bowlers);
         }
+
+        public IActionResult Teams()
+        {
+            var teams = _repo.Teams
+                .ToList();
+
+            return View(teams);
+        }
+
+
+
+
+
+
+
 
         public IActionResult Privacy()
         {

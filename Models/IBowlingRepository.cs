@@ -5,8 +5,9 @@ using System.Threading.Tasks;
 
 namespace Bowlers.Models
 {
-    public interface IBowlersRepository
+    public interface IBowlingRepository
     {
         IQueryable<Bowler> Bowlers { get; }
+        IQueryable<Team> Teams { get; }
     }
 }

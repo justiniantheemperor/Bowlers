@@ -27,12 +27,12 @@ namespace Bowlers
         {
             services.AddControllersWithViews();
 
-            services.AddDbContext<BowlingDbContext> (options =>
+            //set up bowling context 
+            services.AddDbContext<BowlingDbContext>(options =>
            {
                options.UseMySql(Configuration["ConnectionStrings:BowlingDbConnection"]);
            });
-
-            services.AddScoped<IBowlersRepository, EFBowlersRepository>();
+            services.AddScoped<IBowlingRepository, EFBowlingRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

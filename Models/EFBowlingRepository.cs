@@ -5,15 +5,17 @@ using System.Threading.Tasks;
 
 namespace Bowlers.Models
 {
-    public class EFBowlersRepository : IBowlersRepository
+    public class EFBowlingRepository : IBowlingRepository
     {
         private BowlingDbContext _context { get; set; }
 
-        public EFBowlersRepository(BowlingDbContext temp)
+        public EFBowlingRepository(BowlingDbContext temp)
         {
             _context = temp;
         }
 
         public IQueryable<Bowler> Bowlers => _context.Bowlers;
+
+        public IQueryable<Team> Teams => _context.Teams;
     }
 }
