@@ -1,0 +1,77 @@
+﻿@model IEnumerable<Bowlers.Models.Bowler>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Welcome To Our Studio!</div>
+        <div class="masthead-heading text-uppercase">It's Nice To Meet You</div>
+        <a class="btn btn-primary btn-xl text-uppercase" href="#services">Tell Me More</a>
+    </div>
+</header>
+<br />
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<br />
+<table class="table table-bordered table-striped table-dark">
+    <thead>
+        <tr>
+            <th>Team Name</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>MI</th>
+            <th>Address</th>
+            <th>City</th>
+            <th>State</th>
+            <th>Zip</th>
+            <th>Phone</th>
+
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Team.TeamName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BowlerLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BowlerFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BowlerMiddleInit)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BowlerAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BowlerCity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BowlerState)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BowlerZip)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BowlerPhoneNumber)
+            </td>
+
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.BowlerID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.BowlerID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.BowlerID">Delete</a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>

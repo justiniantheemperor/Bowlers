@@ -64,7 +64,7 @@ namespace Bowlers
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Bowlers}/{action=Index}/{id?}");
 
                 // makes it so if route above doesn't work, go to razor pages
                 endpoints.MapRazorPages();

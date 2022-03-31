@@ -19,22 +19,22 @@ namespace Bowlers.Models
         public IQueryable<Team> Teams => _context.Teams;
 
         
-        public void Update(Bowler b)
-        {
-            _context.SaveChanges();
-        }
+        //public void Update(Bowler b)
+        //{
+        //    _context.SaveChanges();
+        //}
 
-        public void Create(Bowler b)
-        {
-            _context.Add(b);
-            _context.SaveChanges();
-        }
+        //public void Create(Bowler b)
+        //{
+        //    _context.Add(b);
+        //    _context.SaveChanges();
+        //}
 
-        public void Delete(Bowler b)
-        {
-            _context.Remove(b);
-            _context.SaveChanges();
-        }
+        //public void Delete(Bowler b)
+        //{
+        //    _context.Remove(b);
+        //    _context.SaveChanges();
+        //}
 
     }
 }
