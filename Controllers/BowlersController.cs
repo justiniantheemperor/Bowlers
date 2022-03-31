@@ -25,7 +25,6 @@ namespace Bowlers.Controllers
                 .Include(b => b.Team)
                 .Where(b => b.Team.TeamName == bowlerTeam || bowlerTeam == null);
 
-
             return View(await bowlingDbContext.ToListAsync());
         }
 

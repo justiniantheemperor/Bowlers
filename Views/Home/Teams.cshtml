@@ -4,23 +4,31 @@
 
 @model List<Team>
 
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+<!-- Masthead-->
+<header class="masthead">
+    <div class="container">
+        <div class="masthead-subheading">Teams</div>
+    </div>
+</header>
 
+<br />
 
 <h3>Select a Team</h3>
 
-<ul>
-    @foreach (var t in Model)
-    {
-        <a asp-controller="Bowlers" asp-action="Index" asp-route-bowlerTeam="@t.TeamName"
-           class="btn btn-primary btn-outline-secondary">@t.TeamName</a>
-    }
-</ul>
+<br />
+
+@foreach (var t in Model)
+{
+    <a asp-controller="Bowlers" asp-action="Index" asp-route-bowlerTeam="@t.TeamName"
+       class="btn btn-primary btn-outline-secondary">@t.TeamName</a>
+}
+
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
