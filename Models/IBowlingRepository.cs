@@ -9,5 +9,11 @@ namespace Bowlers.Models
     {
         IQueryable<Bowler> Bowlers { get; }
         IQueryable<Team> Teams { get; }
+
+        public void Create(Bowler b);
+        public void Update(Bowler b);
+        public void Delete(Bowler b);
+        void SaveChanges();
+        void Remove(Bowler bowler);
     }
 }

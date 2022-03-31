@@ -32,7 +32,12 @@ namespace Bowlers
            {
                options.UseMySql(Configuration["ConnectionStrings:BowlingDbConnection"]);
            });
+
+            // functionality for repo method
             services.AddScoped<IBowlingRepository, EFBowlingRepository>();
+
+            // add razor pages functionality
+            services.AddRazorPages();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -60,6 +65,9 @@ namespace Bowlers
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+
+                // makes it so if route above doesn't work, go to razor pages
+                endpoints.MapRazorPages();
             });
         }
     }

@@ -39,13 +39,8 @@
                 <td>@b.BowlerZip</td>
                 <td>@b.BowlerPhoneNumber</td>
 
-                @*<td class="text-center">
-                    <form method="post" asp-page-handler="Remove">
-                        <input type="hidden" name="bookId" value="@i.Book.BookId" />
-                        <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
-                        <button type="submit" class="btn btn-sm btn-danger">Remove</button>
-                    </form>
-                </td>*@
+                <td><a asp-controller="Home" asp-action="Edit" asp-route-bowlerid="@b.BowlerID">Edit</a></td>
+                <td><a asp-controller="Home" asp-action="Delete" asp-route-bowlerid="@b.BowlerID">Delete</a></td>
             </tr>
             }
         </tbody>
