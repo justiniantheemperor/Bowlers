@@ -1,11 +1,10 @@
-﻿@model IEnumerable<Bowlers.Models.Bowler>
+﻿
 
 @{
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
-
+@model IEnumerable<Bowlers.Models.Bowler>
 <!-- Masthead-->
 <header class="masthead">
     <div class="container">
@@ -18,6 +17,12 @@
 <p>
     <a asp-action="Create">Create New</a>
 </p>
+<br />
+
+<div id="teams">
+    <vc:teams model="null" />
+</div>
+
 <br />
 <table class="table table-bordered table-striped table-dark">
     <thead>
@@ -37,41 +42,41 @@
     <tbody>
         @foreach (var item in Model)
         {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Team.TeamName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BowlerLastName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BowlerFirstName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BowlerMiddleInit)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BowlerAddress)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BowlerCity)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BowlerState)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BowlerZip)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.BowlerPhoneNumber)
-            </td>
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Team.TeamName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BowlerLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BowlerFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BowlerMiddleInit)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BowlerAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BowlerCity)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BowlerState)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BowlerZip)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BowlerPhoneNumber)
+                </td>
 
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.BowlerID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.BowlerID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.BowlerID">Delete</a>
-            </td>
-        </tr>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BowlerID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.BowlerID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.BowlerID">Delete</a>
+                </td>
+            </tr>
         }
     </tbody>
 </table>

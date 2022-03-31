@@ -63,11 +63,16 @@ namespace Bowlers
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Bowlers}/{action=Index}/{id?}");
+                    "teampage",
+                    "{bowlerTeam}",
+                    new { Controller = "Bowlers", action = "Index" });
 
-                // makes it so if route above doesn't work, go to razor pages
-                endpoints.MapRazorPages();
+
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Home}/{action=Index}/{id?}");
+
+
             });
         }
     }

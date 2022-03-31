@@ -19,9 +19,11 @@ namespace Bowlers.Controllers
         }
 
         // GET: Bowlers
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string bowlerTeam)
         {
-            var bowlingDbContext = _context.Bowlers.Include(b => b.Team);
+            var bowlingDbContext = _context.Bowlers
+                .Include(b => b.Team)
+                .Where(b => b.Team.TeamName == bowlerTeam || bowlerTeam == null);
 
 
             return View(await bowlingDbContext.ToListAsync());

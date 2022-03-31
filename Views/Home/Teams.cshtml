@@ -4,9 +4,23 @@
 
 @model List<Team>
 
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+
+<h3>Select a Team</h3>
+
 <ul>
     @foreach (var t in Model)
-            {
-                <li>@t.TeamID - @t.TeamName</li>
-            }
+    {
+        <a asp-controller="Bowlers" asp-action="Index" asp-route-bowlerTeam="@t.TeamName"
+           class="btn btn-primary btn-outline-secondary">@t.TeamName</a>
+    }
 </ul>
